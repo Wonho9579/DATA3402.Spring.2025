@@ -17,19 +17,26 @@ Target:
 - `LoanApproved` (binary: 0 = Not Approved, 1 = Approved)
 
 ## Project Steps (Following Class Guidelines)
+
 1. **Define Project**: Binary classification (Loan approval).
 2. **Initial Look**: Loaded 20,000 rows, confirmed no missing values.
 3. **Feature Summary**: Each feature was evaluated for type, value range, and outliers.
-4. **Visualization**: Histograms and bar charts showed clear class differences.
+4. **Visualization**:
+   - Compared feature distributions between classes using histograms (numerical) and bar charts (categorical).
+   - Identified class imbalance in the target variable.
 5. **Data Preparation**:
    - One-hot encoded `EmploymentStatus`
-   - Standard scaled numerical features
-6. **Model Training**: Logistic Regression using train/test split.
+   - Standard scaled numerical features using `StandardScaler`
+   - Visualized each numerical feature before and after scaling using side-by-side KDE plots (subplot format)
+6. **Model Training**:
+   - Applied `LogisticRegression` using `train_test_split` (80/20) with stratified sampling.
+   - Trained the model using selected and preprocessed features.
 7. **Model Evaluation**:
    - Accuracy: **86.8%**
-   - F1-score for approved class: **0.70**
-   - Confusion matrix included
-8. **Submission File**: Model applied to test set and predictions saved to `loan_approval_submission.csv`.
+   - Precision, Recall, and F1-score evaluated using `classification_report`
+   - Confusion matrix clearly showed correct vs incorrect predictions
+8. **Submission File**:
+   - Predictions on the test set were saved to `loan_approval_submission.csv` in proper Kaggle format
 
 ## Final Performance Summary
 - Accuracy: **0.86825**
@@ -38,9 +45,9 @@ Target:
 - F1-score (Approved): 0.70
 
 ## Files Included
-- `Loan_Project.ipynb`: Full analysis notebook
-- `loan_approval_submission.csv`: Model predictions
-- `README.md`: Project overview (this file)
+- `Loan_Project_Wonho_Jeong.ipynb`: Full analysis notebook
+- `loan_approval_submission.csv`: Model predictions on the test set
+- `README.md`: Project overview and step-by-step summary
 
 ## Author
 Wonho Jeong  
